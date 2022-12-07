@@ -1,1 +1,2 @@
-CompanyName: MUSIKAARRequiredSkills: python,problemsolving,django,mysqlMoreInfo: https://www.timesjobs.com/job-detail/python-developer-musikaar-ahmedabad-1-to-3-yrs-jobid-RRc__PLUS__0POFW0VzpSvf__PLUS__uAgZw==&source=srp
+CompanyName: MUSIKAAR 
+RequiredSkills: python,problemsolving,django,mysqlMoreInfo: https://www.timesjobs.com/job-detail/python-developer-musikaar-ahmedabad-1-to-3-yrs-jobid-RRc__PLUS__0POFW0VzpSvf__PLUS__uAgZw==&source=srp 

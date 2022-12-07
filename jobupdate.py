@@ -19,8 +19,8 @@ def findJobs():
         moreInfo = job.header.h2.a['href']
         if unfamiliar_skills not in skills:
             with open(f'posts/{index}.txt', 'w') as f:
-                f.write(f"CompanyName: {company_name.strip()}")
-                f.write(f"RequiredSkills: {skills.strip()}")
+                f.write(f"CompanyName: {company_name.strip()} \n")
+                f.write(f"RequiredSkills: {skills.strip()} \n")
                 f.write(f"MoreInfo: {moreInfo}")
             print(f"File saved: {index}")
 if __name__ == "__main__":
