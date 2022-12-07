@@ -22,7 +22,7 @@ def findJobs():
                 f.write(f"CompanyName: {company_name.strip()}")
                 f.write(f"RequiredSkills: {skills.strip()}")
                 f.write(f"MoreInfo: {moreInfo}")
-        
+            print(f"File saved: {index}")
 if __name__ == "__main__":
     while True:
         findJobs()
