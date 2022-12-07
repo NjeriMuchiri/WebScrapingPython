@@ -1,6 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
 
+print("Put some skills that you are not familiar with: ")
+unfamiliar_skills = input('> ')
+print(f"Filtering out {unfamiliar_skills} ")
+
 html__text = requests.get('https://www.timesjobs.com/candidate/job-search.html?searchType=personalizedSearch&from=submit&txtKeywords=python&txtLocation=')
 # print(html__text)
 soup = BeautifulSoup(html__text.text, 'lxml')
@@ -11,8 +15,9 @@ for job in jobs:
             company_name = job.find('h3', class_ = 'joblist-comp-name').get_text().replace(' ', '')
             skills = job.find('span', class_ = 'srp-skills').get_text().replace(' ', '')
             moreInfo = job.header.h2.a['href']
-            print(f"CompanyName: {company_name.strip()}")
-            print(f"RequiredSkills: {skills.strip()}")
-            print(f"MoreInfo: {moreInfo}")
+            if unfamiliar_skills not in skills:
+                 print(f"CompanyName: {company_name.strip()}")
+                 print(f"RequiredSkills: {skills.strip()}")
+                 print(f"MoreInfo: {moreInfo}")
             
-            print(' ')
+                 print(' ')
