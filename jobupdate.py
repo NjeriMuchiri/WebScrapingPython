@@ -6,4 +6,8 @@ html__text = requests.get('https://www.timesjobs.com/candidate/job-search.html?s
 soup = BeautifulSoup(html__text.text, 'lxml')
 job = soup.find('li', class_ = 'clearfix job-bx wht-shd-bx')
 company_name = job.find('h3', class_ = 'joblist-comp-name').get_text().replace(' ', '')
-print(company_name)
+skills = job.find('span', class_ = 'srp-skills').get_text().replace(' ', '')
+print(f"""
+CompanyName : {company_name} 
+RequiredSkills : {skills}
+""")
