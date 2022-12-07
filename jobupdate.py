@@ -11,22 +11,21 @@ def findJobs():
 # print(html__text)
  soup = BeautifulSoup(html__text.text, 'lxml')
  jobs = soup.find_all('li', class_ = 'clearfix job-bx wht-shd-bx')
- for job in jobs:
+ for index, job in enumerate(jobs):
     datePost = job.find('span', class_='sim-posted').span.text
     if 'few' in datePost:
         company_name = job.find('h3', class_ = 'joblist-comp-name').get_text().replace(' ', '')
         skills = job.find('span', class_ = 'srp-skills').get_text().replace(' ', '')
         moreInfo = job.header.h2.a['href']
         if unfamiliar_skills not in skills:
-                print(f"CompanyName: {company_name.strip()}")
-                print(f"RequiredSkills: {skills.strip()}")
-                print(f"MoreInfo: {moreInfo}")
+            with open(f'posts/{index}.txt', 'w') as f:
+                f.write(f"CompanyName: {company_name.strip()}")
+                f.write(f"RequiredSkills: {skills.strip()}")
+                f.write(f"MoreInfo: {moreInfo}")
         
-                print(' ')
-
 if __name__ == "__main__":
     while True:
         findJobs()
         time_wait = 10
-        print(f" waiting {time_wait} minutes... ")
+        print(f"waiting {time_wait} minutes... ")
         time.sleep(time_wait * 60)
